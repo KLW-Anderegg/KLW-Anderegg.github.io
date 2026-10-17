@@ -413,7 +413,7 @@
           if (batch.length < 100) break;
         }
         repositories = all.filter(repo =>
-          !repo.private && repo.name.toLowerCase() !== `${owner.toLowerCase()}.github.io`
+          !repo.private && !repo.fork && repo.name.toLowerCase() !== `${owner.toLowerCase()}.github.io`
         );
         loaded = true;
         render();
